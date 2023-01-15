@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ConnectingViewControllerDelegate: class {
+protocol ConnectingViewControllerDelegate: AnyObject {
     func didTapCancel(_ vc: ConnectingViewController)
 }
 

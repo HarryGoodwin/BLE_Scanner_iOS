@@ -14,8 +14,6 @@ struct DisplayPeripheral: Hashable {
 	let lastRSSI: NSNumber
 	let isConnectable: Bool
     
-    var hashValue: Int { return peripheral.hashValue }
-    
     static func ==(lhs: DisplayPeripheral, rhs: DisplayPeripheral) -> Bool {
         return lhs.peripheral == rhs.peripheral
     }
@@ -47,7 +45,7 @@ class PeripheralViewController: UIViewController {
         scanningButton.isEnabled = false
         setupNavBar()
         tableView.contentInset = UIEdgeInsets(top: 6, left: 0, bottom: 6, right: 0)
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 74
     }
 	
@@ -64,8 +62,8 @@ class PeripheralViewController: UIViewController {
     
     private func setupNavBar() {
         navigationController?.navigationBar.barTintColor = .btBlue
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        let backButton = UIBarButtonItem(title: "Disconnect", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        let backButton = UIBarButtonItem(title: "Disconnect", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         backButton.tintColor = .white
         navigationItem.backBarButtonItem = backButton
     }
@@ -207,7 +205,7 @@ extension PeripheralViewController: UITableViewDataSource {
 
 extension PeripheralViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return peripherals.count > 0 ? UITableViewAutomaticDimension : tableView.frame.size.height
+        return peripherals.count > 0 ? UITableView.automaticDimension : tableView.frame.size.height
     }
 }
 

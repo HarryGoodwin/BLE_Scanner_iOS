@@ -24,7 +24,7 @@ class PeripheralConnectedViewController: UIViewController {
         
 		peripheral.delegate = self
 		title = peripheral.name
-		tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
 		tableView.estimatedRowHeight = 80.0
 		tableView.contentInset.top = 5
 		

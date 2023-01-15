@@ -21,10 +21,10 @@ extension UIButton {
     
     func update(isScanning: Bool){
         let title = isScanning ? "Stop Scanning" : "Start Scanning"
-        setTitle(title, for: UIControlState())
+        setTitle(title, for: UIControl.State())
         
         let titleColor: UIColor = isScanning ? .btBlue : .white
-        setTitleColor(titleColor, for: UIControlState())
+        setTitleColor(titleColor, for: UIControl.State())
         
         backgroundColor = isScanning ? UIColor.clear : .btBlue
     }

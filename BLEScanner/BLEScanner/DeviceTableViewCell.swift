@@ -9,7 +9,7 @@
 import UIKit
 import CoreBluetooth
 
-protocol DeviceCellDelegate: class {
+protocol DeviceCellDelegate: AnyObject {
     func didTapConnect(_ cell: DeviceTableViewCell, peripheral: CBPeripheral)
 }
 
